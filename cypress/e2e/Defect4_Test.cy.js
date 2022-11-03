@@ -27,10 +27,9 @@ describe ('enter new note', () => {
         .get('[type="submit"]').click()
         .get('[href="/profile"]').click()
         .get('[class*="Search_card_"]').contains('Ea perferendis autem').should('exist')
-
     })
 
-    xit ('enter small text as a new note', function () {
+    it ('enter small text as a new note', function () {
         cy.get('[href="/login"]').click()
         .get('#email').clear().type(this.data.email)
         .get('input[type ="password"]').clear().type(this.data.password)

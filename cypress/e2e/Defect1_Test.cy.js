@@ -27,17 +27,17 @@ describe('open note', ()=>{
             .get('input[type ="password"]').clear().type(this.data.password)
             .get('[for="submit"] > input').click()
             .get('[href="/profile"]').click()
-            .get('[href="/note/0e85d00f-0f4d-44f2-b5af-23455b0a5ca8"]').should('be.visible').click()
+            .get('[class*="Search_card_"]').contains('Another').should('be.visible').click()
             .get('[class*="Home_title_"]')
             .should('exist')
     })
 
-    it.skip ('open note from the search page', function () {
+    it ('Defect_1 open note from the search page', function () {
         cy.get('[href="/search"]').click()
-        .get('#searchText').clear().type('Another')
-        .get('[class*="Search_card_"]').click()
-        .get('[class*="Home_title_"]')
-        .should('exist')
+            .get('#searchText').clear().type('Another')
+            .get('[class*="Search_card_"]').click()
+            .get('[class*="Home_title_"]')
+            .should('exist')
         
     })
 
