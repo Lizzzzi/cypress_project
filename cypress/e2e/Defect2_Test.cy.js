@@ -13,7 +13,7 @@ describe ('search by owner', () => {
 
     it ('search via text', () => {
         cy.get('[href="/search"]').click()
-            .get('[class*="Search_card_"]').as('cards')
+            .get('[class*="Search_card_"]')
             .then((arr) => n1 = arr.length)
             .get('input#searchText').type('sample note')
         cy.get('[class*="Search_card_"]')
